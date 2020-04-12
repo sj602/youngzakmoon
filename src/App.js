@@ -1,22 +1,19 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import TextScreen from "./components/TextScreen";
 import ImageScreen from "./components/ImageScreen";
+import Ranking from "./components/Ranking";
 
 const App = () => {
   return (
     <div className="App">
       <Switch>
-        <Route path="/text">
-          <TextScreen />
-        </Route>
-        <Route path="/image">
-          <ImageScreen />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
+        <Route exact path="/" component={Home} />
+        <Route path="/text" component={TextScreen} />
+        <Route path="/image" component={ImageScreen} />
+        <Route path="/voice" component={TextScreen} />
+        <Route path="/ranking" component={Ranking} />
       </Switch>
     </div>
   );

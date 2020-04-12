@@ -4,9 +4,8 @@ import Navbar from "./Navbar";
 const Home = () => {
   return (
     <div>
-      <p>Home</p>
-
       <Navbar />
+      <p>Young Zak Moon: 영작문</p>
     </div>
   );
 };
