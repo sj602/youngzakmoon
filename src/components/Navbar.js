@@ -10,59 +10,55 @@ import MicIcon from "@material-ui/icons/Mic";
 import ScoreIcon from "@material-ui/icons/Score";
 
 const Navbar = () => {
-  const [value, setValue] = useState();
+  const [screen, setScreen] = useState();
 
-  const classes = useStyles;
+  const classes = useStyles();
 
   return (
     <div style={{ display: "flex" }}>
       <BottomNavigation
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
+        value={screen}
+        onChange={(event, value) => {
+          console.log(value);
+          setScreen(value);
         }}
         showLabels
         className={classes.root}
       >
         <BottomNavigationAction
           label="홈"
-          icon={
-            <Link to="/">
-              <HomeIcon />
-            </Link>
-          }
+          component={Link}
+          to="/"
+          value=""
+          icon={<HomeIcon />}
         />
         <BottomNavigationAction
+          component={Link}
+          to="/text"
           label="텍스트 모드"
-          icon={
-            <Link to="/">
-              <MessageIcon />
-            </Link>
-          }
+          value="text"
+          icon={<MessageIcon />}
         />
         <BottomNavigationAction
+          component={Link}
+          to="/image"
           label="이미지 모드"
-          icon={
-            <Link to="/">
-              <WallpaperIcon />
-            </Link>
-          }
+          value="image"
+          icon={<WallpaperIcon />}
         />
         <BottomNavigationAction
+          component={Link}
+          to="/voice"
           label="보이스 모드"
-          icon={
-            <Link to="/">
-              <MicIcon />
-            </Link>
-          }
+          value="voice"
+          icon={<MicIcon />}
         />
         <BottomNavigationAction
+          component={Link}
+          to="/ranking"
           label="랭킹 보기"
-          icon={
-            <Link to="/">
-              <ScoreIcon />
-            </Link>
-          }
+          value="ranking"
+          icon={<ScoreIcon />}
         />
       </BottomNavigation>
     </div>

@@ -8,13 +8,11 @@ import Ranking from "./components/Ranking";
 const App = () => {
   return (
     <div className="App">
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/text" component={TextScreen} />
-        <Route path="/image" component={ImageScreen} />
-        <Route path="/voice" component={TextScreen} />
-        <Route path="/ranking" component={Ranking} />
-      </Switch>
+      <Route exact path="/" component={Home} />
+      <Route path="/text" component={TextScreen} />
+      <Route path="/image" component={ImageScreen} />
+      <Route path="/voice" component={TextScreen} />
+      <Route path="/ranking" component={Ranking} />
     </div>
   );
 };
